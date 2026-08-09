@@ -15,11 +15,15 @@ dependencyResolutionManagement {
     // 设置仓库模式为 FAIL_ON_PROJECT_REPOS，禁止在子模块的 build.gradle 文件中单独定义仓库。
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
-        gradlePluginPortal()
-        mavenCentral()
-        google()
-        maven("https://jitpack.io")
-
+        mavenCentral()       // Maven 中央仓库优先，确保 Xposed 等官方库从此下载
+        google()             // Google 的 Maven 仓库
+        gradlePluginPortal() // Gradle 官方插件门户
+        // JitPack 仓库，但排除 de.robv.android.xposed 组，防止 401 Unauthorized 错误
+        maven("https://jitpack.io") {
+            content {
+                excludeGroup("de.robv.android.xposed")
+            }
+        }
     }
 }
 
