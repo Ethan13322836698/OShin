@@ -1,23 +1,38 @@
-*.iml
-.gradle
-/local.properties
-/.idea
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
+```
+# Gradle
+.gradle/
+build/
+!gradle/wrapper/
+
+# Kotlin
+*.kt.bak
+*.kotlin_metadata
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+
+# Dependencies
+node_modules/
+vendor/bundle/
+.PATH
 .DS_Store
-/build
-/.kotlin
-/captures
-/app/release
-/app/debug
-.externalNativeBuild
-.cxx
-local.properties
-/app/all
-/app/copy.ps1
-/app/old/
-.idea
+
+# Logs
+*.log
+.log
+
+# Environment specific
+.env
+.env.local
+.env.*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+```
